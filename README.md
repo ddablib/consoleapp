@@ -1,346 +1,66 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<!--
- * This Source Code Form is subject to the terms of the Mozilla Public License,
- * v. 2.0. If a copy of the MPL was not distributed with this file, You can
- * obtain one at http://mozilla.org/MPL/2.0/
- *
- * Copyright (C) 2013-2014, Peter Johnson (www.delphidabbler.com).
- *
- * Read-me file for Console Application Runner Classes
--->
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+# Console Application Runner Classes
 
-<head>
+## Description
 
-  <title>
-    DelphiDabbler.com Console Application Runner Classes ReadMe
-  </title>
+These classes are designed to be used to control the execution of child console application processes. There are two classes: a class named _TPJCustomConsoleApp_ that is provided a base class for user-defined sub-classes, and _TPJConsoleApp_ that is used to provide a general way to run and manipulate console applications. Both classes are provided in a single unit, _PJConsoleApp_.
 
-  <style type="text/css">
-    body {
-      margin: 1em;
-      padding: 0;
-      font-family: Verdana, Arial, sans-serif;
-      font-size: 9pt;
-      line-height: 150%;
-    }
-    h1 {
-      margin: 0 0 1em 0;
-      padding: 0.5em;
-      border: 1px silver solid;
-      background-color: #eee;
-      font-size: 13pt;
-      font-weight: bold;
-      text-align: center;
-    }
-    h1 .subtitle {
-      font-style: italic;
-      color: #336;
-    }
-    h2 {
-      margin: 1em 0 0 0;
-      padding: 0;
-      padding-bottom: 6px;
-      border-bottom: 1px silver solid;
-      font-size: 11pt;
-      font-weight: bold;
-    }
-    h3 {
-      margin: 0.5em 0 0 0;
-      padding: 0;
-      font-size: 9pt;
-      font-weight: bold;
-    }
-    p {
-      margin: 0.5em 0 0 0;
-      padding: 0;
-    }
-    ul, ol {
-      margin: 0.5em 0 0 3em;
-      padding: 0;
-    }
-    ul {
-      list-style-type: square;
-    }
-    ul.spaced li,
-    ol.spaced li {
-      margin-top: 0.5em;
-    }
-    ul.spaced li,
-    ol.spaced li {
-      margin-top: 0.5em;
-    }
-    ul.unspaced li,
-    ol.unspaced li {
-      margin-top: 0;
-    }
-    ul.unspaced li.first,
-    ol.unspaced li.first {
-      margin-top: 0.5em;
-    }
-    code {
-      font-family: "Courier New", Courier, monospace;
-    }
-    a:link {
-      color: #336;
-      text-decoration: underline;
-    }
-    a:visited {
-      color: #669;
-      text-decoration: underline;
-    }
-    a:active {
-      color: #336;
-      text-decoration: underline;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .pullout {
-      border-left: 8px silver solid;
-      background-color: #eee;
-      margin: 0.5em 0 0 0;
-      padding: 0.25em 0.5em;
-      font-style: italic;
-    }
-    .indent {
-      margin-left: 3em;
-    }
-    .highlight {
-      color: #336;
-      font-style: italic;
-      font-weight: bold;
-    }
-    .endnotes {
-      margin: 1.5em 0 0 0;
-      padding: 1em 0 0 0;
-      border-top: 1px silver solid;
-    }
-    .comments {
-      font-style: italic;
-    }
-    .copyright,
-    .copyright a:link,
-    .copyright a:visited,
-    .copyright a:active {
-      margin: 1em 0 0 0;
-      color: gray;
-      font-size: 8pt;
-      text-align: right;
-    }
-  </style>
+The classes enable the console application's standard input, standard output and standard error to be redirected to and from files or pipes. The classes can also time-slice the running of the console application to enable the calling application to continue processing and to enable redirected piped output to be processed.
 
-</head>
+For full details please see the [online documentation](https://delphidabbler.com/url/consoleapp-docs).
 
-<body>
+### Compatibility
 
-<h1>
-  Console Application Runner Classes<br />
-  <span class="subtitle">ReadMe</span>
-</h1>
+The classes require Delphi 7 and later.
 
-<h2 id="desc">
-  Description
-</h2>
+_PJConsoleApp_ is suitable for compilation with both the 32 bit and 64 bit Delphi compilers (Delphi XE2 and later). However, the unit uses the Windows API so is not suitable for compilation for other platforms.
 
-<p>
-  These classes are designed to be used to control the execution of child
-  console application processes. There are two classes: a class named
-  <var>TPJCustomConsoleApp</var> that is provided a base class for user-defined
-  sub-classes, and <var>TPJConsoleApp</var> that is used to provide a general
-  way to run and manipulate console applications. Both classes are provided in a
-  single unit, <var>PJConsoleApp</var>.
-</p>
+The classes can be used with both the VCL and FireMonkey frameworks.
 
-<p>
-  The classes enable the console application's standard input, standard output
-  and standard error to be redirected to and from files or pipes. The classes
-  can also time-slice the running of the console application to enable the
-  calling application to continue processing and to enable redirected piped
-  output to be processed.
-</p>
+## Installation
 
-<p>
-  For full details please see the <a
-    href="http://www.delphidabbler.com/url/consoleapp-docs"
-  >online documentation</a>.
-</p>
+The _Console Application Runner Classes_ and associated documentation and demo program source files are supplied in a zip file. Before installing, or using, you need to extract all the files from the zip file, preserving the directory structure. The following files will be extracted:
 
-<h3 id="compatibility">
-   Compatibility
-</h3>
+* **`PJConsoleApp.pas`** – The source code of the console application runner classes.
+* `CHANGELOG.md` – The project's change log.
+* `Documentation.URL` – Short-cut to the project's online documentation.
+* `MPL-2.0.txt` – Mozilla Public License v2.0.
+* `README.md` – The project's read-me file.
 
-<p>
-  The classes require Delphi 7 and later.
-</p>
+In addition to the above files you will find numerous demo projects in the `Demos` sub-directory.
 
-<p>
-  <var>PJConsoleApp</var> is suitable for compilation with both the 32 bit and
-  64 bit Delphi compilers (Delphi XE2 and later). However, the unit uses the
-  Windows API so is not suitable for compilation for OSX.
-</p>
+There are three possible ways to use the units.
 
-<p>
-  The classes can be used with both the VCL and FireMonkey frameworks.
-</p>
+1. The simplest way is to add `PJConsoleApp.pas` to your projects as and when you need it.
+2. To make the unit easier to re-use you can either copy it to a folder on your Delphi search path, or add the folder where you extracted the units to the search path. You then simply use the units as required without needing to add them to your project.
+3. For maximum portability you can add the unit to a Delphi design time package. If you need help doing this [see here](https://delphidabbler.com/url/install-comp).
+4. If you use Git you can added the [`ddablib/consoleapp`](https://github.com/ddablib/consoleapp) GitHub repository as a Git submodule and add it to your project. Obviously, it's safer if you fork the repo and use your copy, just in case `ddablib/consoleapp` ever goes away.
 
-<h2 id="installation">
-  Installation
-</h2>
+## Demo Programs
 
-<p>
-  The Console Application Runner Classes and associated documentation and demo
-  program source files are supplied in a zip file. Before installing, or using,
-  you need to extract all the files from the zip file, preserving the directory
-  structure. The following files will be extracted:
-</p>
+The source code for numerous demo projects is included in the download. All the demos and supporting files are stored in sub-folders of the `Demos` directory.
 
-<ul>
-  <li>
-    <code><strong>PJConsoleApp.pas</strong></code> &ndash; The source code of
-    the console application runner classes.
-  </li>
-  <li>
-    <code>Docs\ChangeLog.txt</code> &ndash; The project's change log.
-  </li>
-  <li>
-    <code>Docs\Documentation.URL</code> &ndash; Short-cut to the project's
-    online documentation.
-  </li>
-  <li>
-    <code>Docs\MPL-2.0.txt</code> &ndash; Mozilla Public License v2.0.
-  </li>
-  <li>
-    <code>Docs\ReadMe.htm</code> &ndash; The project's read-me file.
-  </li>
-</ul>
+Please note that some of the demos use units and classes from the DelphiDabbler [_IO Utility Classes_](https://delphidabbler.com/software/ioutils) project. Before attempting to compile the affected demos you need to download that project and copy the required units to the `Demos\IOUtils` directory. Users of Delphi XE5 and later must use _IO Utility Classes_ v1.0.1 or later.
 
-<p>
-  In addition to the above files you will find numerous demo projects in the
-  <code>Demos</code> sub-directory.
-</p>
+For more information see the file [`README.txt`](https://raw.githubusercontent.com/ddablib/consoleapp/main/Demos/README.txt) in the `Demos` directory.
 
-<p>
-  There are three possible ways to use the units.
-</p>
+The demo programs are described in the _Examples_ section of the [online documentation](https://delphidabbler.com/url/consoleapp-docs).
 
-<ol class="spaced">
-  <li>
-    The simplest way is to add <code>PJConsoleApp.pas</code> to your projects as
-    and when you need it.
-  </li>
-  <li>
-    To make the unit easier to re-use you can either copy it to a folder on your
-    Delphi search path, or add the folder where you extracted the units to the
-    search path. You then simply use the units as required without needing to
-    add them to your project.
-  </li>
-  <li>
-    For maximum portability you can add the unit to a Delphi design time
-    package. If you need help doing this <a
-      href="http://www.delphidabbler.com/url/install-comp"
-    >see here</a>.
-  </li>
-</ol>
+## Update History
 
-<h2 id="demo">
-  Demo Programs
-</h2>
+A complete change log is provided in [`CHANGELOG.md`](https://github.com/ddablib/consoleapp/blob/main/CHANGELOG.md) that is included in the download.
 
-<p>
-  The source code for numerous demo projects is included in the download. All
-  the demos and supporting files are stored in sub-folders of the
-  <code>Demos</code> directory.
-</p>
+## License
 
-<p class="pullout">
-  Please note that some of the demos use units and classes from the
-  DelphiDabbler <a
-    href="http://www.delphidabbler.com/software/ioutils"
-  >IO Utility Classes</a> project. Before attempting to compile the affected
-  demos you need to download this project and copy the required units to the
-  <code>Demos\IOUtils</code> directory. Users of Delphi XE5 and later must
-  use IO Utility Classes v1.0.1 or later.
-</p>
+The _Console Application Runner Classes_ are released under the terms of the [Mozilla Public License, v2.0](https://www.mozilla.org/MPL/2.0/).
 
-<p>
-  For more information see the file <code>README.txt</code> in the
-  <code>Demos</code> directory.
-</p>
+## Bugs and Feature Requests
 
-<p>
-  The demo programs are described in the <em>Examples</em> section of the <a
-    href="http://www.delphidabbler.com/url/consoleapp-docs"
-  >online documentation</a>.
-</p>
+Bugs can be reported or new features requested via the project's [Issue Tracker](https://github.com/ddablib/consoleapp/issues). A GitHub account is required.
 
-<h2 id="changelog">
-  Update History
-</h2>
+Please check if an issue has already been created for a similar report or request. If so then please add a comment containing as much information as you can to the existing issue, or if you've nothing to add, just add a :+1: (`:+1:`) comment. If there is no suitable existing issue then please add a new issue and give as much information as possible.
 
-<p>
-  A complete change log is provided in a text file that is included in the
-  download.
-</p>
+## About the Author
 
-<h2 id="license">
-  License
-</h2>
+I'm Peter Johnson – a hobbyist programmer living in Ceredigion in West Wales, UK, writing mainly in Delphi. My programs and other library code are available from: [https://delphidabbler.com/](https://delphidabbler.com/).
 
-<p>
-  The <em>Console Application Runner Classes</em> are released under the terms
-  of the <a
-    href="http://www.mozilla.org/MPL/2.0/"
-  >Mozilla Public License, v2.0</a>.
-</p>
-
-<h2 id="bugs">
-  Bugs and Feature Requests
-</h2>
-
-<p>
-  Bugs can be reported or new features requested via the <a
-    href="http://www.delphidabbler.com/url/ddlib-issues"
-  >Issue Tracker</a>.
-</p>
-
-<p>
-  If no similar report or request has been recorded already, use the <em>New
-  Issue</em> link to add a new issue. Please select the most appropriate
-  template from the <em>Templates</em> drop down list and apply the
-  <code>Project-consoleapp</code> label. If there is already a similar issue
-  please add a comment to it if there's anything you can add.
-</p>
-
-<h2 id="author">
-  About the Author
-</h2>
-
-<p>
-  I'm Peter Johnson &ndash; a hobbyist programmer living in Ceredigion in West
-  Wales, UK, writing write mainly in Delphi. My programs are available for
-  download from <a
-    href="http://www.delphidabbler.com/"
-  >http://www.delphidabbler.com/</a>.
-</p>
-
-<div class="endnotes">
-  <div class="comments">
-    Please <a
-      href="http://www.delphidabbler.com/contact"
-    >let me know</a> if you have any comments about the classes, but please
-    use the <a
-      href="http://www.delphidabbler.com/url/ddlib-issues"
-    >Issue Tracker</a> discussed above to report bugs and request new features.
-  </div>
-  <div class="copyright">
-    This document is copyright &copy; 2007-2014, P D Johnson, <a
-      href="http://www.delphidabbler.com/"
-    >www.delphidabbler.com</a>
-  </div>
-</div>
-
-</body>
-
-</html>
+This document is copyright © 2007-2022, [P D Johnson](https://gravatar.com/delphidabbler).
