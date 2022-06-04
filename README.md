@@ -28,12 +28,12 @@ The _Console Application Runner Classes_ and associated documentation and demo p
 
 In addition to the above files you will find numerous demo projects in the `Demos` sub-directory.
 
-There are three possible ways to use the units.
+There are four possible ways to use the units.
 
 1. The simplest way is to add `PJConsoleApp.pas` to your projects as and when you need it.
 2. To make the unit easier to re-use you can either copy it to a folder on your Delphi search path, or add the folder where you extracted the units to the search path. You then simply use the units as required without needing to add them to your project.
 3. For maximum portability you can add the unit to a Delphi design time package. If you need help doing this [see here](https://delphidabbler.com/url/install-comp).
-4. If you use Git you can added the [`ddablib/consoleapp`](https://github.com/ddablib/consoleapp) GitHub repository as a Git submodule and add it to your project. Obviously, it's safer if you fork the repo and use your copy, just in case `ddablib/consoleapp` ever goes away.
+4. If you use Git you can add the [`ddablib/consoleapp`](https://github.com/ddablib/consoleapp) GitHub repository as a Git submodule and add it to your project. Obviously, it's safer if you fork the repo and use your copy, just in case `ddablib/consoleapp` ever goes away.
 
 ## Demo Programs
 
