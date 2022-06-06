@@ -41,9 +41,9 @@ The source code for numerous demo projects is included in the download. All the 
 
 Please note that some of the demos use units and classes from the DelphiDabbler [_IO Utility Classes_](https://delphidabbler.com/software/ioutils) project. Before attempting to compile the affected demos you need to download that project and copy the required units to the `Demos\IOUtils` directory. Users of Delphi XE5 and later must use _IO Utility Classes_ v1.0.1 or later.
 
-For more information see the file [`README.txt`](https://raw.githubusercontent.com/ddablib/consoleapp/main/Demos/README.txt) in the `Demos` directory.
+For more information see the file [`README.md`](https://github.com/ddablib/consoleapp/blob/develop/Demos/README.md) in the `Demos` directory.
 
-The demo programs are described in the _Examples_ section of the [online documentation](https://delphidabbler.com/url/consoleapp-docs).
+The demo programs are described in the [_Examples_](https://delphidabbler.com/url/consoleapp-egs) section of the [online documentation](https://delphidabbler.com/url/consoleapp-docs).
 
 ## Update History
 
