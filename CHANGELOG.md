@@ -1,42 +1,38 @@
-; ------------------------------------------------------------------------------
-; This Source Code Form is subject to the terms of the Mozilla Public License,
-; v. 2.0. If a copy of the MPL was not distributed with this file, You can
-; obtain one at http://mozilla.org/MPL/2.0/
-;
-; Copyright (C) 2013-2014, Peter Johnson (www.delphidabbler.com).
-;
-; Change Log for Console Application Runner Classes
-; ------------------------------------------------------------------------------
+# Change Log for Console Application Runner Classes
 
-Release 3.1.0 of 11 August 2014
+## v3.1.0 of 11 August 2014
+
 + Added new UnicodeEnvironment Boolean property to TPJCustomConsoleApp that enables a Unicode environment block to be passed to child processes.
 + Fixed bug preventing compilation of FireMonkey demo projects 4, 8 & 11 in Delphi XE4 and later by conditionally including the required FXM.StdCtrls unit for those compilers.
 + Added new demo project #13 that demonstrates the use of the Environment and UnicodeEnvironment properties of TPJConsoleApp.
 + Minor corrections to code comments.
 
-Release 3.0.1 of 11 January 2014
+## v3.0.1 of 11 January 2014
+
 + Fixed problems with compiler directives in PJConsoleApp.pas, demo project #12 and Echoer test application that were causing compilation to fail on Delphi XE5.
 + Minor documentation tweaks and corrections.
 
-Release 3.0.0 of 25 March 2013
+## v3.0.0 of 25 March 2013
+
 + The PJPipes, PJPipeFilters and PJFileHandle units were all removed from the project. They are now part of the I/O Utilities Classes project.
 + Modifications made to support compilation with Delphi XE2 and later:
-  - Unit names references in project source files are now qualified with the unit's namespace name when compiled with Delphi XE2 and later.
-  - The reference to the Graphics unit was replaced with System.UITypes in Delphi XE2 and later to remove the unit's dependency on the VCL permitting its use in FireMonkey projects.
+  + Unit names references in project source files are now qualified with the unit's namespace name when compiled with Delphi XE2 and later.
+  + The reference to the Graphics unit was replaced with System.UITypes in Delphi XE2 and later to remove the unit's dependency on the VCL permitting its use in FireMonkey projects.
 + Updated demos:
-  - All VCL demo form fonts changed to Arial 9pt.
-  - VCL demo forms are no longer scaled.
-  - Provided read-me file to explain how to build demos.
-  - Improved project and config files so all dependant files can be found by all supported Delphi compilers. Fixes Issue #24 (http://code.google.com/p/ddab-lib/issues/detail?id=24).
-  - Added a new FireMonkey 2 versions of Demos #4, #8 and #11.
+  + All VCL demo form fonts changed to Arial 9pt.
+  + VCL demo forms are no longer scaled.
+  + Provided read-me file to explain how to build demos.
+  + Improved project and config files so all dependant files can be found by all supported Delphi compilers. ~~Fixes Issue #24.~~
+  + Added a new FireMonkey 2 versions of Demos #4, #8 and #11.
 + Project source license changed to Mozilla Public License v2.0 while demo source code and batch files have been placed in the public domain.
 + Updated documentation.
 
-Release 2.0.0 of 03 May 2011
+## v2.0.0 of 03 May 2011
+
 + Significant updates to TPJCustomConsoleApp and TPJConsoleApp classes:
-  - Several new properties.
-  - New OnStart event.
-  - New overloaded version of Execute method.
+  + Several new properties.
+  + New OnStart event.
+  + New overloaded version of Execute method.
 + Added new ReadBytes and WriteBytes methods to TPJPipe.
 + New PJPipeFilters unit containing classes for safely reading text from pipes and splitting the text into lines. Includes filters for ANSI and Unicode text.
 + New TPJFileHandle class for assisting in creating files with inheritable handles.
@@ -45,27 +41,30 @@ Release 2.0.0 of 03 May 2011
 + Some "unsafe" compiler warnings inhibited.
 + All units now have XMLDoc compatible comments.
 + Major update to demo projects:
-  - All demos now work correctly with Unicode Delphis.
-  - Many revisions to demos to demonstrate new filter and file handle classes.
-  - Two new demos.
-  - "Echoer" helper program now has option output Unicode text.
-  - Some changes to organisation and configuration of demo projects' config and project files.
-  - New test ANSI text file (extract from "Moby Dick").
-+ User guide removed from project since documentation now in online wiki at http://www.delphidabbler.com/url/consoleapp-wiki
+  + All demos now work correctly with Unicode Delphis.
+  + Many revisions to demos to demonstrate new filter and file handle classes.
+  + Two new demos.
+  + "Echoer" helper program now has option output Unicode text.
+  + Some changes to organisation and configuration of demo projects' config and project files.
+  + New test ANSI text file (extract from "Moby Dick").
++ User guide removed from project since documentation now in online wiki.
 + Internet short-cut to documentation wiki renamed.
 + Updated other documentation files.
 
-Release 1.0.2 of 20 July 2010
+## v1.0.2 of 20 July 2010
+
 + Fixed problem with programs failing to execute when compiled with Unicode versions of Delphi due to strange "feature" of Unicode version of Windows CreateProcess API function.
 + Fixed similar Unicode CreateProcess problem in demo #1.
 + Switched off unsafe code warnings in PJConsoleApp.pas and PJPipe.pas.
 + Updated user guide to note that demos #7, #8 & #9 do not work with Unicode versions of Delphi.
 + Updated other documentation.
 
-Release 1.0.1 of 30 March 2008
+## v1.0.1 of 30 March 2008
+
 + Made constants defining application errors public.
 + Did some minor refactoring.
 + Updated and corrected documentation.
 
-Release 1.0.0 of 04 October 2007
+## v1.0.0 of 04 October 2007
+
 + Original version.
